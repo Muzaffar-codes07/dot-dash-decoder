@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				morse: {
+					navy: '#1A365D',
+					blue: '#2B6CB0',
+					yellow: '#F6E05E',
+					gold: '#D69E2E',
+					light: '#EDF2F7',
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,24 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-dot': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'pulse-dash': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.6' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-dot': 'pulse-dot 1.5s infinite',
+				'pulse-dash': 'pulse-dash 1.5s infinite'
+			},
+			fontFamily: {
+				mono: ['Courier New', 'monospace'],
 			}
 		}
 	},
