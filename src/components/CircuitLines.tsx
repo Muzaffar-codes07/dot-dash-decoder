@@ -2,14 +2,21 @@
 import React, { useEffect, useState } from 'react';
 
 const CircuitLines: React.FC = () => {
-  const [lines, setLines] = useState<{ id: number; top: number; delay: number }[]>([]);
+  const [lines, setLines] = useState<{ id: number; top: number; delay: number; color: string }[]>([]);
 
   useEffect(() => {
     const generateLines = () => {
-      const newLines = Array.from({ length: 10 }, (_, i) => ({
+      const colors = [
+        'rgba(0, 255, 65, 0.2)',    // Bright green
+        'rgba(30, 174, 219, 0.2)',  // Bright blue
+        'rgba(139, 92, 246, 0.2)',  // Vivid purple
+      ];
+
+      const newLines = Array.from({ length: 15 }, (_, i) => ({
         id: i,
         top: Math.random() * 100,
-        delay: Math.random() * 5
+        delay: Math.random() * 5,
+        color: colors[Math.floor(Math.random() * colors.length)]
       }));
       setLines(newLines);
     };
@@ -27,7 +34,8 @@ const CircuitLines: React.FC = () => {
           className="circuit-line"
           style={{
             top: `${line.top}%`,
-            animationDelay: `${line.delay}s`
+            animationDelay: `${line.delay}s`,
+            backgroundColor: line.color
           }}
         />
       ))}
