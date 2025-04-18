@@ -1,69 +1,38 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 215 25% 27%;
+    --background: 150 30% 3%;
+    --foreground: 120 100% 50%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card: 150 30% 5%;
+    --card-foreground: 120 100% 45%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover: 150 30% 3%;
+    --popover-foreground: 120 100% 50%;
 
-    --primary: 215 50% 23%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 100% 45%;
+    --primary-foreground: 150 30% 3%;
 
-    --secondary: 45 93% 47%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 120 70% 25%;
+    --secondary-foreground: 120 100% 50%;
 
-    --muted: 213 27% 92%;
-    --muted-foreground: 215 25% 40%;
+    --muted: 150 30% 10%;
+    --muted-foreground: 120 70% 45%;
 
-    --accent: 213 27% 92%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 120 70% 25%;
+    --accent-foreground: 120 100% 50%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 150 30% 3%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 215 50% 23%;
+    --border: 120 70% 25%;
+    --input: 120 70% 25%;
+    --ring: 120 100% 45%;
 
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 215 28% 17%;
-    --foreground: 210 40% 98%;
-
-    --card: 215 28% 17%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 215 28% 17%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 215 25% 27%;
-
-    --secondary: 45 93% 47%;
-    --secondary-foreground: 215 25% 27%;
-
-    --muted: 215 28% 25%;
-    --muted-foreground: 210 40% 80%;
-
-    --accent: 215 28% 25%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 28% 25%;
-    --input: 215 28% 25%;
-    --ring: 210 40% 90%;
   }
 }
 
@@ -73,7 +42,14 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+    background-image: 
+      linear-gradient(
+        to bottom,
+        rgba(0, 255, 65, 0.05) 1px,
+        transparent 1px
+      );
+    background-size: 100% 8px;
   }
 }
 
@@ -88,4 +64,3 @@
 .morse-space {
   @apply inline-block w-3;
 }
-
