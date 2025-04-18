@@ -59,9 +59,9 @@ const MorseCodeConverter: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-5xl">
+    <Card className="w-full max-w-5xl neon-border bg-morse-hacker-bg/30 backdrop-blur-sm">
       <CardHeader className="pb-4">
-        <CardTitle className="text-xl font-bold">Convert between Text and Morse Code</CardTitle>
+        <CardTitle className="text-xl font-bold neon-text">Convert between Text and Morse Code</CardTitle>
         <CardDescription>
           Enter text or Morse code to translate between them instantly.
           Use dots (.) and dashes (-) for Morse code input.

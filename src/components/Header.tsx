@@ -8,12 +8,12 @@ const Header: React.FC = () => {
       <div className="container max-w-5xl">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Terminal className="h-8 w-8 text-morse-hacker-green" />
-            <h1 className="text-2xl font-bold tracking-tight text-morse-hacker-green">CIPHER//MORSE</h1>
+            <Terminal className="h-8 w-8 text-morse-hacker-green neon-text" />
+            <h1 className="text-2xl font-bold tracking-tight neon-text">CIPHER//MORSE</h1>
           </div>
           <div className="flex items-center gap-4">
-            <Shield className="h-6 w-6 text-morse-hacker-dimGreen animate-pulse" />
-            <Radio className="h-6 w-6 text-morse-hacker-dimGreen animate-pulse" />
+            <Shield className="h-6 w-6 text-morse-hacker-dimGreen animate-pulse neon-text" />
+            <Radio className="h-6 w-6 text-morse-hacker-dimGreen animate-pulse neon-text" />
           </div>
         </div>
       </div>
