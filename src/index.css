@@ -43,29 +43,50 @@
 
   body {
     @apply bg-background text-foreground font-mono;
-    background-color: #0A0F0D;
+    background-color: #000000;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: 
-      linear-gradient(
-        to bottom,
-        rgba(0, 255, 65, 0.05) 1px,
-        transparent 1px
-      ),
-      radial-gradient(
-        circle at center,
-        transparent 0%,
-        rgba(0, 255, 65, 0.02) 100%
-      );
-    background-size: 100% 8px, 100% 100%;
-    animation: matrix-bg 20s linear infinite;
+      radial-gradient(circle at 30% 30%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
+    z-index: -2;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 255, 65, 0.03) 2px,
+      rgba(0, 255, 65, 0.03) 4px
+    );
+    mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
+    z-index: -1;
+    animation: circuit-shift 20s linear infinite;
   }
 }
 
-@keyframes matrix-bg {
+@keyframes circuit-shift {
   0% {
-    background-position: 0 0, center;
+    transform: translateY(-50%) translateX(-50%) rotate(0deg);
   }
   100% {
-    background-position: 0 100%, center;
+    transform: translateY(-50%) translateX(-50%) rotate(360deg);
   }
 }
 
@@ -103,4 +124,30 @@
 
 .morse-space {
   @apply inline-block w-3;
+}
+
+.circuit-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+  height: 1px;
+  width: 100%;
+  animation: circuit-line-move 8s linear infinite;
+  opacity: 0;
+}
+
+@keyframes circuit-line-move {
+  0% {
+    transform: translateY(0) translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(100%);
+    opacity: 0;
+  }
 }
