@@ -3,17 +3,9 @@ import Header from '@/components/Header';
 import MorseCodeConverter from '@/components/MorseCodeConverter';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Terminal } from 'lucide-react';
+import CCodeDisplay from '@/components/CCodeDisplay';
 
 const Index: React.FC = () => {
-  const scrollToConverter = () => {
-    const converter = document.getElementById('morse-converter');
-    if (converter) {
-      converter.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -26,14 +18,7 @@ const Index: React.FC = () => {
               Translate between text and Morse code instantly. Morse code uses dots (.) and dashes (-) 
               to represent letters and numbers in a standardized sequence.
             </p>
-            <Button 
-              onClick={scrollToConverter}
-              size="lg"
-              className="bg-morse-hacker-green hover:bg-morse-hacker-dimGreen text-black font-bold neon-border"
-            >
-              <Terminal className="mr-2 h-5 w-5" />
-              Launch Morse Converter
-            </Button>
+            <CCodeDisplay />
           </section>
           
           <div id="morse-converter">
